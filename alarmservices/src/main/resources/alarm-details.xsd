@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+		targetNamespace="http://prashanth.cpm/spring/soap/api/alarmdetails" 
+		xmlns:tns="http://prashanth.cpm/spring/soap/api/alarmdetails" 
+		elementFormDefault="qualified">
+		<xs:element name="getAlarmByIdRequest">
+				<xs:complexType>
+					<xs:sequence>
+					<xs:element name="alarmid" type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+		</xs:element>
+		<xs:element name="getAlarmByIdResponse">
+				<xs:complexType>
+					<xs:sequence>
+							<xs:element name="alarmDetails" type="tns:alarmDetails"/>
+					</xs:sequence>
+				</xs:complexType>
+		</xs:element>
+			<xs:complexType name="alarmDetails">
+					<xs:sequence>
+						<xs:element name="alarmId" type="xs:string"/>
+						<xs:element name="alarmEquipment" type="xs:string"/>
+						<xs:element name="alarmDateAndTime" type="xs:dateTime"/>
+						<xs:element name="alarmDescription" type="xs:string"/>
+					</xs:sequence>
+			</xs:complexType>
+		
+</xs:schema>
